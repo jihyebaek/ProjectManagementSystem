@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+body {background-color: #f5f6f7;}
+.login_wrap {width:400px; display: inline-block; float: left; position: fixed;top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.login_box {width:100%; display: inline-block; float: left; padding:30px 35px 35px 35px; box-shadow: 0 0 25px rgb(0, 0, 0, 0.1); border-radius:12px; margin-bottom: 20px; background-color: #fff;}
+.login_title {width:100%; display:inline-block; float: left; text-align:center; font-size: 1.6em; font-weight: bold; margin-bottom: 20px;}
+.login_input {width:100%; display:inline-block; float: left;}
+.login_input input.int_frm {width:100%; display: inline-block; float: left; height: 40px; padding: 0 10px; font-size:15px; border:1px solid #ccc; border-radius:3px; margin-bottom: 10px;}
+
+.member_reg { display:inline-block; width:100%; text-align:center; padding:15px 0 0 0;}
+.member_reg a { display:inline-block; color:#333;}
+.member_reg a:hover { color:#000;}
+
+.login_section { display:inline-block; width:100%; padding:10px 0; text-align:left;}
+.login_profile_box { display:inline-block; width:100%; padding:10px 0 10px 0; margin-bottom:20px; text-align:left; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+
+.frm_radio { display:inline-block; width:100%; padding-bottom:10px;}
+.frm_radio .radio_box { display:inline-block; float:left; margin-right:15px; font-size:15px;}
+.frm_radio .radio_box input.radio { display:inline-block; width:15px; height:15px; margin-right:3px;}
+
+.frm_2way { display:inline-block; width:100%;}
+.frm_2way input.int_frm { display:inline-block; width:49%; margin-right:2%;}
+.frm_2way input.int_frm:last-child { margin-right:0%;}
+
+.login_btn {width: 100%; display: inline-block; float:left; height:45px; line-height:45px;}
+.service_tel {width: 100%; display: inline-block; float: left; font-size: 1.1em; font-weight: bold; margin-bottom: 30px;}
+.login_btn button {color: #fff; width: 100%; height: 100%; display: inline-block; float: left; background-color: #1e94ec; border-radius:3px; font-size: 1.2em; font-weight: bold; border:0px;}
+.login_notice {width: 100%; display: inline-block; float: left;}
+.login_notice a {}
+.login_notice span.copy_info { display:inline-block; width:100%;}
+.login_notice span.copy_info span.bar { display:inline-block; width:1px; height:10px; border-right:1px solid #ddd; margin:0 7px;}
+.login_notice span.copyright { display:inline-block; padding:10px 0 0 0;}
+
+
+/* 회원가입 - 프로필 등록*/
+.profile_img { display:inline-block; width:80px; height:80px; float:left;}
+.profile_img img.user_img {width:100%;}
+.profile_add { display:inline-block; width:calc(100% - 80px); padding-left:20px; float:left;}
+.profile_add input.add_file { display:inline-block; width:100%; border:1px solid #ccc; padding:5px; border-radius:3px;}
+.profile_add span.profile_add_tip { display:inline-block; width:100%; font-size:13px; padding:5px 0 0 0;}
+
+
+/* 회원가입완료 */
+.member_result { display:inline-block; text-align:center; padding:20px 0 30px 0;}
+.result_profile_img { display:inline-block; width:80px; height:80px;}
+.result_profile_img img.user_img {width:100%;}
+.user_name { display:inline-block; width:100%; text-align:center; font-size:19px; font-weight:bold; padding:10px 0 0 0;}
+.result_notice { display:inline-block; width:100%; text-align:center; font-size:19px; padding:5px 0 0 0;}
+		
+			
+@media all and ( max-width: 800px ){
+body {background-color: #f5f6f7;}
+.login_wrap {width:100%; display: inline-block; float: left; position: fixed; top:30%; left: 50%; transform: translate(-50%,-50%);}
+.login_box {width:100%; display: inline-block; float:left; padding:30px 35px 0px 35px; box-shadow: 0 0 25px rgb(0, 0, 0, 0); border-radius:12px; margin-bottom: 20px; background-color:rgba(0, 0, 0, 0);}
+.login_title {width:100%; display:inline-block; float: left; text-align:center; font-size:2em; font-weight: bold; margin-bottom: 20px;}
+.login_input {width:100%; display:inline-block; float: left; margin-right:0%;}
+.login_input input {width:100%; display: inline-block; float: left; height: 50px; padding: 0 10px; font-size:15px; border:1px solid #ccc; border-radius:3px;}
+.login_input input:first-child {margin-bottom: 10px;}
+.login_btn {width:100%; display: inline-block; float:left; height:90px; line-height:90px;}
+.service_tel {width: 100%; display: inline-block; float: left; font-size: 1.1em; font-weight: bold; margin-bottom:15px;}
+.login_btn button {color: #fff; width: 100%; height:50px; display: inline-block; float: left; background-color: #1e94ec; border-radius:3px; font-size: 1.2em; font-weight: bold; border:0px; margin-top:15px;}
+
+.member_reg { display:inline-block; width:100%; text-align:center; padding:0px 0 0 0;}
+.member_reg a { display:inline-block; color:#333;}
+.member_reg a:hover { color:#000;}
+
+.login_notice {width: 100%; display: inline-block; float: left; font-size:13px; padding:0 20px;}
+.login_notice a {}
+.login_notice span.copy_info { display:inline-block; width:100%;}
+.login_notice span.copy_info span.bar { display:inline-block; width:1px; height:10px; border-right:1px solid #ddd; margin:0 7px;}
+.login_notice span.copyright { display:inline-block; padding:10px 0 0 0;}
+}
