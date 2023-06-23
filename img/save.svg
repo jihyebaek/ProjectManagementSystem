@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Object" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M475.4,100.6l-96-96c-3-3-7.1-4.7-11.4-4.6h-32v128c0,17.7-14.3,32-32,32H176c-17.7,0-32-14.3-32-32V0H48
+	C21.5,0,0,21.5,0,48v384c0,26.5,21.5,48,48,48h32V336c0-26.5,21.5-48,48-48h224c26.5,0,48,21.5,48,48v144h32c26.5,0,48-21.5,48-48
+	V112C480,107.7,478.4,103.7,475.4,100.6z"/>
+<path class="st0" d="M176,0h128v128H176V0z"/>
+<path class="st0" d="M352,320H128c-8.8,0-16,7.2-16,16v144h256V336C368,327.2,360.8,320,352,320z"/>
+</svg>
