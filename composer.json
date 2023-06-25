@@ -1,0 +1,17 @@
+{
+    "name": "jhb/pm",
+    "description": "project management system",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Jhb\\Pm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jhbaek",
+            "email": "bbaeka91@gmail.com"
+        }
+    ],
+    "require": {}
+}
