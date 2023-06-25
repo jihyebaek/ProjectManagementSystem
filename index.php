@@ -1,5 +1,4 @@
-<php
-echo "qoddi 나오니?
-";
+<?php
+echo "qoddi 나오니?";
 
 ?>
