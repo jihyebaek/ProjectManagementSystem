@@ -1,10 +1,10 @@
 <?php 
 
-    include_once('./common.php');
-    include_once('./head.php');
-    include_once('./head_sub.php');
-    include_once('./popup.php');
-    
+    // include_once('./common.php');
+    // include_once('./head.php');
+    // include_once('./head_sub.php');
+    // include_once('./popup.php');
+
 ?>
 
 <style>
