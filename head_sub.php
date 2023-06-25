@@ -1,13 +1,13 @@
 <?php
     include_once('./common.php'); 
-    if (!checkId($_SESSION['memId'])) { //쿠키 log_id가 db에 없다면 log_in.php로 이동
-        header('Location: ./login.php');
-    } else {
-        $_SESSION['memId'] = $_COOKIE['memId']; //브라우저 종료후 다시 홈페이지 접속시 session값 세팅
-    }
+    // if (!checkId($_SESSION['memId'])) { //쿠키 log_id가 db에 없다면 log_in.php로 이동
+    //     header('Location: ./login.php');
+    // } else {
+    //     $_SESSION['memId'] = $_COOKIE['memId']; //브라우저 종료후 다시 홈페이지 접속시 session값 세팅
+    // }
     
-    $sessionId = $_SESSION['memId'];
-    $rslt = checkId($sessionId);
+    // $sessionId = $_SESSION['memId'];
+    // $rslt = checkId($sessionId);
 ?>
 
 <!-- Popup Include -->
