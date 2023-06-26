@@ -1,13 +1,13 @@
 <?php 
 /* DB 접속 정보 */
-define('MY_HOST', 'localhost:3308');
-define('MY_USER', 'root');
-define('MY_PASS', '1234');
-define('MY_DB', 'project');
+define('MY_HOST', 'localhost');
+define('MY_USER', 'pjtmgtsys');
+define('MY_PASS', 'pms987!!');
+define('MY_DB', 'pjtmgtsys');
 
 session_start();
 
-$pNo = isset($_GET['pNo']);
+$pNo = $_GET['pNo'];
 
 /* 회원가입 - 아이디 중복검사 */
 /* 로그인 - 로그인 회원의 정보 가져오기 */
@@ -54,9 +54,12 @@ function getProjectInfos($memNo,$memLevel) {
                     INNER JOIN member c ON b.mem_no = c.mem_no
                     WHERE b.mem_no = '$memNo'";}
     $result = mysqli_query($conn, $query);
-    $i=0;
     $data=[];
-    while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    if(!empty($result) || $result == true) {
+        $i=0;
+        while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    }
+
     mysqli_close($conn);
     return $data;
 }
@@ -67,10 +70,11 @@ function getPjtMembers() {
     $conn = mysqli_connect(MY_HOST, MY_USER, MY_PASS, MY_DB) or die($conn."DB open error");
     $query = "SELECT * FROM member WHERE mem_level >= '5'";
     $result = mysqli_query($conn, $query);
-    // 다중배열 루프 돌려 담기
-    $i=0;
     $data=[];
-    while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    if(!empty($result) || $result == true) {
+        $i=0;
+        while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    }
     mysqli_close($conn);
     return $data;
 }
@@ -123,10 +127,11 @@ function getPjtSubMembers($pNo) {
             INNER JOIN member b ON a.mem_no = b.mem_no 
             WHERE pw_pno = '$pNo' AND pw_type = 'Project'";
     $result = mysqli_query($conn, $query);
-    // 다중배열 루프 돌려 담기
-    $i=0;
     $data=[];
-    while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    if(!empty($result) || $result == true) {
+        $i=0;
+        while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    }
     mysqli_close($conn);
     return $data;
 }
@@ -199,9 +204,11 @@ function getPjtDetailMembers($pNo,$psNo) {
 function getProjectSchedule() {
     $conn = mysqli_connect(MY_HOST, MY_USER, MY_PASS, MY_DB) or die($conn."DB open error");
     $query = "SELECT * FROM project a INNER JOIN project_sub b ON a.pjt_no = b.pjt_no ORDER BY a.pjt_no";
-    $rslt = mysqli_query($conn, $query);
-    $i=0;
-    while($row = mysqli_fetch_assoc($rslt)) {
+    $result = mysqli_query($conn, $query);
+    $data = [];
+    if(!empty($result) || $result == true) {
+        $i=0;
+    while($row = mysqli_fetch_assoc($result)) {
         $data[$i] = $row;
 
         // 잔여 작업기간 구하기
@@ -222,9 +229,27 @@ function getProjectSchedule() {
         // echo '<span class="calender_info_list"><span>'.$data[$i]['pjts_startdate'].' ~ '.$data[$i]['pjts_duedate'].'<b class="period_status_color_g">('.$data[$i]['residual_day'].'/'.$data[$i]['auto_status'].')</b></span><span>/</span><span>'.$data[$i]['pjt_name'].'</span><span>/</span><span>'.$data[$i]['pjts_name'].'</span></span>';
         $i++;
     }
+    }
+    
     mysqli_close($conn);
     return $data;
 }
 $schedule = getProjectSchedule();
+
+/* 휴가/행사 일정 가져오기 */
+function getHolidayEvent() {
+    $conn = mysqli_connect(MY_HOST, MY_USER, MY_PASS, MY_DB) or die($conn."DB open error");
+    $query = "SELECT a.*, b.mem_name FROM holiday_event a INNER JOIN member b ON a.mem_no = b.mem_no";
+    $result = mysqli_query($conn, $query);
+    $data=[];
+    if(!empty($result) || $result == true) {
+        $i=0;
+        while($row = mysqli_fetch_assoc($result)) {$data[$i] = $row; $i++;}
+    }
+    mysqli_close($conn);
+    return $data;
+}
+$event = getHolidayEvent();
+
 
 ?>
